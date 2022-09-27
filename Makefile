@@ -47,8 +47,8 @@ build-tenant-manager-deps: pull-apicurio-deps
 .PHONY: build-tenant-manager-deps
 
 update-tenant-manager-dep-version: pull-apicurio-deps
-	@echo "Updating apicurio deps to version "$(shell xq .project.version multitenancy/pom.xml -r)
-	mvn versions:set-property -Dproperty=apicurio-registry-tenant-manager-client.version -DgenerateBackupPoms=false -DnewVersion=$(shell xq .project.version apicurio-registry/pom.xml -r)
+	@echo "Updating apicurio deps to version "$(shell (cd multitenancy && mvn help:evaluate -Dexpression=project.version -q -DforceStdout))
+	mvn versions:set-property -Dproperty=apicurio-tenant-manager-client.version -DgenerateBackupPoms=false -DnewVersion=$(shell (cd multitenancy && mvn help:evaluate -Dexpression=project.version -q -DforceStdout))
 .PHONY: update-tenant-manager-dep-version
 
 pull-apicurio-deps:
