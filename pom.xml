@@ -37,7 +37,7 @@
         <apicurio-common-rest-client.version>0.1.11.Final</apicurio-common-rest-client.version>
         <keycloak.version>11.0.3</keycloak.version>
         <keycloak.testcontainers.version>1.5.0</keycloak.testcontainers.version>
-        <embedded-postgres.version>1.2.10</embedded-postgres.version>
+        <embedded-postgres.version>2.0.1</embedded-postgres.version>
         <wiremock.version>2.27.2</wiremock.version>
         <sentry.version>1.7.30</sentry.version>
 
