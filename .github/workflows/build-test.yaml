@@ -1,11 +1,11 @@
 name: Build and Test
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
 
 env:
   PLATFORMS: linux/amd64,linux/arm64,linux/s390x,linux/ppc64le
@@ -16,7 +16,7 @@ jobs:
   build-test:
     name: Build and Test
     runs-on: ubuntu-18.04
-    if: github.repository_owner == 'bf2fc6cc711aee1a0c2a'
+    # if: github.repository_owner == 'bf2fc6cc711aee1a0c2a'
     steps:
 
       - name: Set up JDK 11
