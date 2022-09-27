@@ -69,7 +69,7 @@ public class RegistryProvisioningIT {
 
         TenantResource maxTotalSchemas = null;
         for (var r : resources) {
-            if (r.getType() == ResourceType.MAX_TOTAL_SCHEMAS_COUNT) {
+            if (r.getType().equals(ResourceType.MAX_TOTAL_SCHEMAS_COUNT)) {
                 maxTotalSchemas = r;
             }
         }

@@ -66,7 +66,7 @@ public class QuotaPlanIT {
         var resources = tenant.getResources();
         Long l = null;
         for (var r : resources) {
-            if (r.getType() == ResourceType.MAX_TOTAL_SCHEMAS_COUNT) {
+            if (r.getType().equals(ResourceType.MAX_TOTAL_SCHEMAS_COUNT)) {
                 l = r.getLimit();
             }
         }
@@ -78,7 +78,7 @@ public class QuotaPlanIT {
         resources = tenant.getResources();
         l = null;
         for (var r : resources) {
-            if (r.getType() == ResourceType.MAX_TOTAL_SCHEMAS_COUNT) {
+            if (r.getType().equals(ResourceType.MAX_TOTAL_SCHEMAS_COUNT)) {
                 l = r.getLimit();
             }
         }
@@ -87,7 +87,7 @@ public class QuotaPlanIT {
 
         // Update the limit value and recheck after forced reconciliation
         for (var r : resources) {
-            if (r.getType() == ResourceType.MAX_TOTAL_SCHEMAS_COUNT) {
+            if (r.getType().equals(ResourceType.MAX_TOTAL_SCHEMAS_COUNT)) {
                 r.setLimit(-1L);
             }
         }
@@ -99,7 +99,7 @@ public class QuotaPlanIT {
         resources = tenant.getResources();
         l = null;
         for (var r : resources) {
-            if (r.getType() == ResourceType.MAX_TOTAL_SCHEMAS_COUNT) {
+            if (r.getType().equals(ResourceType.MAX_TOTAL_SCHEMAS_COUNT)) {
                 l = r.getLimit();
             }
         }
@@ -114,7 +114,7 @@ public class QuotaPlanIT {
         resources = tenant.getResources();
         l = null;
         for (var r : resources) {
-            if (r.getType() == ResourceType.MAX_TOTAL_SCHEMAS_COUNT) {
+            if (r.getType().equals(ResourceType.MAX_TOTAL_SCHEMAS_COUNT)) {
                 l = r.getLimit();
             }
         }
