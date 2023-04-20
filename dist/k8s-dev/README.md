@@ -28,6 +28,6 @@ And start the necessary tunnels with the script:
 ```
 (stop the port forwards as usual with `Ctrl+C`)
 
-Now you can access Apicurio UI at [http://localhost:9090](http://localhost:9090)
+Now you can access Apicurio UI at [http://localhost:8082](http://localhost:8082)
 
 Enjoy!

@@ -18,16 +18,12 @@ spec:
       - name: registry-app
         image: 'quay.io/apicurio/apicurio-registry-sql:latest-snapshot'
         env:
-          - name: REGISTRY_ENABLE_MULTITENANCY
-            value: 'true'
           - name: REGISTRY_DATASOURCE_URL
             value: 'jdbc:postgresql://multitenant-sr-db-registry:5432/multitenantsrdb'
           - name: REGISTRY_DATASOURCE_USERNAME
             value: 'postgres'
           - name: REGISTRY_DATASOURCE_PASSWORD
             value: 'postgres'
-          - name: TENANT_MANAGER_URL
-            value: 'http://tenant-manager:8585'
           - name: AUTH_ENABLED
             value: 'true'
           - name: KEYCLOAK_URL
@@ -38,22 +34,10 @@ spec:
             value: none
           - name: KEYCLOAK_REALM
             value: 'demo-apicurio'
+          - name: KEYCLOAK_UI_CLIENT_ID
+            value: 'sr-ui'
           - name: KEYCLOAK_API_CLIENT_ID
             value: 'sr-api'
-          - name: ORGANIZATION_ID_CLAIM
-            value: 'organization_id'
-          - name: TENANT_MANAGER_AUTH_URL
-            value: 'http://keycloak:8080/auth'
-          - name: TENANT_MANAGER_REALM
-            value: 'demo-apicurio'
-          - name: TENANT_MANAGER_CLIENT_ID
-            value: 'sr-tenant-manager'
-          - name: TENANT_MANAGER_CLIENT_SECRET
-            valueFrom:
-              secretKeyRef:
-                name: tenant-manager-client-secret
-                key: secret
-                optional: false
           - name: CORS_ALLOWED_ORIGINS
             value: "*"
         ports:
